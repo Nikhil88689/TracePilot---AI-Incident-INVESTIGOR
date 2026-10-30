@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* TracePilot is a dark-only product; tokens live on :root and are mapped below. */
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-severity-critical: var(--severity-critical);
+  --color-severity-high: var(--severity-high);
+  --color-severity-medium: var(--severity-medium);
+  --color-severity-low: var(--severity-low);
+  --color-surface: var(--surface);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 6px);
+  --radius-3xl: calc(var(--radius) + 8px);
+  --radius-4xl: calc(var(--radius) + 10px);
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --background: #0b0d12;
+  --sidebar: #10131a;
+  --card: #151923;
+  --surface: #1b2030;
+  --popover: #151923;
+  --border: #272c38;
+  --input: #272c38;
+
+  /* Text */
+  --foreground: #e6e8ee;
+  --card-foreground: #e6e8ee;
+  --popover-foreground: #e6e8ee;
+  --muted: #1b2030;
+  --muted-foreground: #8b93a7;
+
+  /* Brand */
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #1b2030;
+  --secondary-foreground: #e6e8ee;
+  --accent: #1e2335;
+  --accent-foreground: #e6e8ee;
+  --ring: #818cf8;
+  --info: #60a5fa;
+
+  /* Status */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --destructive: #f87171;
+
+  /* Severity scale (also used by charts) */
+  --severity-critical: #f87171;
+  --severity-high: #fb923c;
+  --severity-medium: #fbbf24;
+  --severity-low: #60a5fa;
+
+  /* Sidebar */
+  --sidebar-foreground: #c3c8d6;
+  --sidebar-primary: #6366f1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1b2030;
+  --sidebar-accent-foreground: #e6e8ee;
+  --sidebar-border: #272c38;
+  --sidebar-ring: #818cf8;
+
+  /* Charts */
+  --chart-1: #818cf8;
+  --chart-2: #60a5fa;
+  --chart-3: #34d399;
+  --chart-4: #fbbf24;
+  --chart-5: #f87171;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply bg-background font-sans;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
